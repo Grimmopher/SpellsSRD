@@ -12,5 +12,9 @@
   "dependencies": {
     "express": "^4.13.4",
     "lodash": "^4.5.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
   }
 }
