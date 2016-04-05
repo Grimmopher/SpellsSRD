@@ -1,0 +1,55 @@
+html, body, h1, h2, h3, p, ol, ul, li, a {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/*---Header---*/
+.title{
+    margin-top: 25px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.banner-top {
+    height: 100px;
+    background-color: #FF7100;
+    width: 100%;
+}
+
+.banner-split {
+    height:5px;
+    background-color:#FFA400;
+    width: 100%;
+}
+
+.banner-bottom {
+    height:50px;
+    background-color: #FF7100;
+    width:100%;
+}
+
+/*---Spell Table---*/
+.maintable {
+    margin: auto;
+}
+
+.spelltable {
+    border: 1;
+    width: 75%;
+    padding: 2px;
+    text-align: center;
+    margin: auto;
+}
+
+.spelltable tr:nth-child(even){
+    background-color:#FF943E;
+}
+
+.spelltable  tr:nth-child(odd){
+    background-color: #ffffff;
+}
+
+
