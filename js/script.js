@@ -3,46 +3,55 @@
     var app = angular.module("spellbook",[]);
 
     var MainController = function ($scope, $http) {
-    
-           $http.get("https://raw.githubusercontent.com/Grimmopher/srd_spells/master/spells.json")
+        let spells= [];
+        
+        $http.get("https://raw.githubusercontent.com/Grimmopher/srd_spells/master/spells.json")
            .then(onSpellComplete, onError);
-           
-        function classes(spells.tags) {
-  
-            var tagClasses = {};
-            
-            for (let i = 0; i < tags.length; i++){
-                if (tags[i] == "wizard") tagClasses.wizard = true;
-                if (tags[i] == "ranger") tagClasses.ranger = true;
-                if (tags[i] == "rogue") tagClasses.rogue = true;
-                if (tags[i] == "barbarian") tagClasses.barbarian = true;
-                if (tags[i] == "fighter") tagClasses.fighter = true;
-                if (tags[i] == "druid") tagClasses.druid = true;
-                if (tags[i] == "monk") tagClasses.monk = true;
-                if (tags[i] == "sorcerer") tagClasses.sorcerer = true;
-                if (tags[i] == "warlock") tagClasses.warlock = true;
-                if (tags[i] == "paladin") tagClasses.paladin = true;
-            }
-            return tagClasses;
-        }
         
-        var classes = classFinder(tags);
-        
-        $scope.classes = classes;
-        
-       // var spellClass = [];
-        //var findClass = function(response){
-          //  for (let i=0; i<spells.tags.length; i++) {
-            //    if i == "wizard" {};}}   
-                                 
         var onSpellComplete = function(response){
-            $scope.spells = response.data;
+            spells = response.data;
         };
         
         var onError = function(reason){
             $scope.error = "Could not fetch the data.";
         };
+              
+        function cleanSpells(rawSpells){
+            let finalSpells = [];
+            for (let i =0; i<rawSpells.length; i++) {
+                finalSpells[i].name = rawSpells[i].name;
+                finalSpells[i].ritual = rawSpells[i].ritual;
+                finalSpells[i].level = rawSpells[i].level;
+                finalSpells[i].school = rawSpells[i].school;
+                finalSpells[i].casting_time = rawSpells[i].casting_time;
+                finalSpells[i].range = rawSpells[i].range;
+                finalSpells[i].components.raw = rawSpells[i].components.raw;
+                finalSpells[i].duration = rawSpells[i].duration;
+                finalSpells[i].description = rawSpells[i].description;
+            };
+            return finalSpells;
+        };
         
+        
+        /*function cleanClasses(spells) {
+  
+            var finalClasses = [];
+            
+            for (let i = 0; i < spells.tags.length; i++){
+                if (spells.tags[i] == "wizard") finalClasses.wizard = true;
+                if (spells.tags[i] == "ranger") finalClasses.ranger = true;
+                if (spells.tags[i] == "rogue") finalClasses.rogue = true;
+                if (spells.tags[i] == "barbarian") finalClasses.barbarian = true;
+                if (spells.tags[i] == "fighter") finalClasses.fighter = true;
+                if (spells.tags[i] == "druid") finalClasses.druid = true;
+                if (spells.tags[i] == "monk") finalClasses.monk = true;
+                if (spells.tags[i] == "sorcerer") finalClasses.sorcerer = true;
+                if (spells.tags[i] == "warlock") finalClasses.warlock = true;
+                if (spells.tags[i] == "paladin") finalClasses.paladin = true;
+            };
+            return finalClasses;
+        }*/
+       $scope.spells = cleanSpells(spells);
        $scope.spellsSortOrder = "+name";    
     };
 

@@ -31,6 +31,7 @@
             <option value="+school">School</option>
             <option value="+ritual">Ritual?</option>          
         </select>
+        {{spells}}
         <div class="maintable">
             <table class="spelltable">
                 <thead>
@@ -45,12 +46,6 @@
                 <tbody>
                     <tr ng-repeat = "spell in spells | orderBy:spellsSortOrder">
                         <td>{{spell.name}}</td>
-                        <td>
-                            <div ng-show="classes.wizard">Wizard</div>
-                            <div ng-show="classes.sorcerer">Sorcerer</div>
-                            <div ng-show="classes.druid">Druid</div>
-                            <div ng-show="classes.monk">Monk</div>
-                        </td>
                         <td>{{spell.level}}</td>
                         <td>{{spell.school}}</td>
                         <td>{{spell.ritual}}</td>
