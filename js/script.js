@@ -9,11 +9,15 @@
            .then(onSpellComplete, onError);
         
         var onSpellComplete = function(response){
-            spells = response.data;
+            $scope.spells = cleanSpells(response.data);
+            $scope.spellsSortOrder = "+name";  
         };
+        
+
         
         var onError = function(reason){
             $scope.error = "Could not fetch the data.";
+            
         };
               
         function cleanSpells(rawSpells){
@@ -29,7 +33,7 @@
                 finalSpells[i].duration = rawSpells[i].duration;
                 finalSpells[i].description = rawSpells[i].description;
             };
-            return finalSpells;
+            return finalSpells;            
         };
         
         
@@ -51,8 +55,8 @@
             };
             return finalClasses;
         }*/
-       $scope.spells = cleanSpells(spells);
-       $scope.spellsSortOrder = "+name";    
+        
+  
     };
 
     app.controller("MainController", ["$scope", "$http", MainController]);
