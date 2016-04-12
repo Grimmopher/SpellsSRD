@@ -6,7 +6,7 @@ html, body, h1, h2, h3, p, ol, ul, li, a {
 
 /*---Header---*/
 .title{
-    margin-top: 25px;
+    padding-top: 25px;
 }
 
 h1 {
