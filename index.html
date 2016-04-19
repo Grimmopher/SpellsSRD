@@ -36,6 +36,7 @@
             <table class="spelltable">
                 <thead>
                     <tr>
+                        <th style="width:30px;"></th>
                         <th>Spell Name</th>
                         <th>Class</th>
                         <th>Level</th>
@@ -44,13 +45,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat = "spell in spells | orderBy:spellSortOrder">
+                    <tr ng-repeat-start = "spell in spells | orderBy:spellSortOrder">
+                        <td>
+                            <button ng-if="spell.showMe" ng-click="spell.showMe = false">-</button>
+                            <button ng-if="!spell.showMe" ng-click="spell.showMe = true">+</button>
+                        </td>
                         <td>{{spell.name}}</td>
                         <td>{{spell.tags}}</td>
                         <td>{{spell.level}}</td>
                         <td>{{spell.school}}</td>
-                        <td>{{spell.ritual}}</td>
+                        <td>{{spell.ritual}}</td> 
                     </tr>
+                    <tr ng-if="spell.showMe" ng-repeat-end="">
+                        <td colspan="6">{{spell.description}}</td>  
+                    </tr>                    
                 </tbody>
             </table>
         </div>
