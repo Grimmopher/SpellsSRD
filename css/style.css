@@ -1,55 +1,33 @@
 html, body, h1, h2, h3, p, ol, ul, li, a {
-    border: 0;
-    padding: 0;
-    margin: 0;
-}
-
-/*---Header---*/
-.title{
-    padding-top: 25px;
-}
-
-h1 {
-    text-align: center;
-}
+  border: 0;
+  padding: 0;
+  margin: 0; }
 
 .banner-top {
-    height: 100px;
-    background-color: #FF7100;
-    width: 100%;
-}
+  height: 100px;
+  background-color: #FF7100;
+  width: 100%; }
 
 .banner-split {
-    height:5px;
-    background-color:#FFA400;
-    width: 100%;
-}
+  height: 2px;
+  background-color: #FFA400;
+  width: 100%; }
 
 .banner-bottom {
-    height:50px;
-    background-color: #FF7100;
-    width:100%;
-}
+  height: 50px;
+  background-color: #FF7100;
+  width: 100%; }
 
-/*---Spell Table---*/
-.maintable {
-    margin: auto;
-}
+table, th, td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px; }
 
-.spelltable {
-    border: 1;
-    width: 75%;
-    padding: 2px;
-    text-align: center;
-    margin: auto;
-}
+table tr:nth-child(odd) {
+  background-color: #FF943E; }
 
-.spelltable tr:nth-child(even){
-    background-color:#FF943E;
-}
+table tr:nth-child(even) {
+  background-color: #f1f1f1; }
 
-.spelltable  tr:nth-child(odd){
-    background-color: #ffffff;
-}
-
-
+table th {
+  background-color: #ffffff; }

@@ -6,20 +6,35 @@ html, body, h1, h2, h3, p, ol, ul, li, a {
 
 .banner-top {
     height: 100px;
-    color: #FF7100;
+    background-color: #FF7100;
     width: 100%;
 }
 
 .banner-split {
     height:2px;
-    color:#FFA400;
+    background-color:#FFA400;
     width: 100%;
 }
 
 .banner-bottom {
     height:50px;
-    color: #FF7100;
+    background-color: #FF7100;
     width:100%;
 }
 
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
 
+table tr:nth-child(odd)	{
+  background-color: #FF943E;
+}
+table tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+table th {
+    background-color: #ffffff
+}
